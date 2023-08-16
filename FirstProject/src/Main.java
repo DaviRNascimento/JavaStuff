@@ -12,8 +12,13 @@ public class Main {
         // we created new objects from the classes:
         SwitchStatement secondObj = new SwitchStatement();
         ShortHandIfElse thirdObj = new ShortHandIfElse();
+        WhileLoop forthObj = new WhileLoop();
 
         secondObj.switchStatement(first);
         thirdObj.ternaryOperator(second);
+        int defaultValue = forthObj.whileLoop(1);
+
+        System.out.print("While Loop Returned Value: " + defaultValue);
+
     }
 }
