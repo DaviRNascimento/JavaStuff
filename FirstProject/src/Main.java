@@ -1,11 +1,19 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // We first create a new object from the classes;:
-        IfElseStatements x = new IfElseStatements();
-        ShortHandIfElse y = new ShortHandIfElse();
 
-        // And then we're able to call their methods:
-        x.myMethod(10.54f, 12.65d);
-        y.ternaryOperator((byte)18);
+        Scanner dataObj = new Scanner(System.in);
+        System.out.println("Enter the week day you're at the moment: ");
+        byte first = (byte)dataObj.nextInt();
+        System.out.println("What time is it: ");
+        byte second = (byte)dataObj.nextInt();
+
+        // we created new objects from the classes:
+        SwitchStatement secondObj = new SwitchStatement();
+        ShortHandIfElse thirdObj = new ShortHandIfElse();
+
+        secondObj.switchStatement(first);
+        thirdObj.ternaryOperator(second);
     }
 }
