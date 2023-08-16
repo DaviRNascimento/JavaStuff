@@ -8,4 +8,7 @@ public class IfElseStatements {
             System.out.print("x is bigger than y");
         }
     }
+    public static void anotherMethod() {
+        myMethod(10, 65);
+    }
 }
