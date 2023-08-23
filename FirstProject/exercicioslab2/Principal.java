@@ -1,4 +1,4 @@
-public class Main {
+public class Principal {
     public static void main(String[] args) {
         // definição de objetos para chamar métodos posteriomente:
         Quadrado firstObj = new Quadrado();

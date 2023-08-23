@@ -13,10 +13,12 @@ public class Main {
         SwitchStatement secondObj = new SwitchStatement();
         ShortHandIfElse thirdObj = new ShortHandIfElse();
         WhileLoop forthObj = new WhileLoop();
+        Arrays fifthObj = new Arrays();
 
         secondObj.switchStatement(first);
         thirdObj.ternaryOperator(second);
         int defaultValue = forthObj.whileLoop(1);
+        fifthObj.makingArrays();
 
         System.out.print("While Loop Returned Value: " + defaultValue);
 
