@@ -1,3 +1,4 @@
+// Importing Necessary classes
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,6 +8,8 @@ public class Main {
         int[] clientsCode = {};
         float[] clientsHeight = {};
         float[] clientsWeight = {};
+
+        // Scanner object
         Scanner enteredData = new Scanner(System.in);
 
         // first message
@@ -32,20 +35,36 @@ public class Main {
             clientsWeight[clientsWeight.length - 1] = clientWeight;
         }
 
-        showingData(clientsCode, clientsHeight, clientsWeight);
+        returnGreaterValue(clientsHeight);
+        returnGreaterValue(clientsWeight);
+
+        returnSorted(clientsHeight);
+        returnSorted(clientsWeight);
+
+
     }
 
-    public static void showingData(int[] clientsCode, float[] clientsHeight, float[] clientsWeight) {
-        // Set up the arrays in ascendant order
-        Arrays.sort(clientsCode);
-        Arrays.sort(clientsHeight);
-        Arrays.sort(clientsWeight);
+    // method to get the GREATER VALUE inside the array
+    public static float returnGreaterValue(float[] arr) {
+        float max = arr[0];
 
-        float highestClient = clientsHeight[clientsHeight.length-1];
-        float heaviestClient = clientsWeight[clientsWeight.length-1];
-
-        // It'll print the higher and the heaviest client
-        System.out.println("This is the higher client: " + clientsCode[Arrays.binarySearch(clientsHeight, highestClient)] +
-                            "And this is the heaviest: " + clientsCode[Arrays.binarySearch(clientsWeight, heaviestClient)]);
+        for(int i=0; i<arr.length; i++) {
+            if(max < arr[i]) {
+                max=arr[i];
+            }
+        }
+       return max;
     }
+
+    // method that returns the ASCENDANT SORTED LIST
+    public static void returnSorted(float[] arr) {
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // method to return the AVERAGE
+    public static void returnAverage(float[] arr) {
+        
+    }
+
 }
