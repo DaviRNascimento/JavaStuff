@@ -6,5 +6,6 @@ public class App {
         Scanner scanner = new Scanner(name);
         // scanner.findInLine("D");  
         System.out.println("Inline Finded Element: " + scanner.findInLine(""));
+        scanner.close();
     }         
 }

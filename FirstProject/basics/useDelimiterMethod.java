@@ -7,5 +7,6 @@ public class App {
         while(scan.hasNext()) {
             System.out.println(scan.next());
         }
+        scan.close();
     }
 }
