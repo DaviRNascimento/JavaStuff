@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.lang.Math;
 
-public class ExerciciosLab2 {
+public class App {
     public static void main(String[] args) {
 
         // Lista de Atividades LP2
@@ -139,15 +140,126 @@ public class ExerciciosLab2 {
             System.out.printf("Convertido para Celsius temos: %.2f", ((tempFahrenheit - 32) * (5/9.00)));
         }
         
-        scanner.close();
 
-        /*
-        Preciso finalizar
-        I still need to finish
-        .
-        .
-        .
-        */
+        // 6) Leitura de um número e operações encima do mesmo
+        System.out.println("""
+                Questão de Número 6) Leitura de um Número e operações encima do mesmo
+                Digite um Número qualquer:
+                """);
+
+        // variavel que armazena o número
+        float numeroRecebido = scanner.nextFloat();
+        scanner.nextLine();
+        
+        System.out.printf("""
+                O número dado é: %.2f
+                O triplo desse número equivale a: %.0f
+                A metade dele é: %.2f
+                Sua raiz cúbica: %.0f
+                E, por fim, este mesmo número elevado a 2/3: %.2f
+                """, numeroRecebido, 
+                (numeroRecebido*3), 
+                (numeroRecebido/2), 
+                Math.cbrt(numeroRecebido),
+                (Math.pow(numeroRecebido, 2/3 )));
             
+
+        // 7) Programa que calcula distancia em quaisqueres dois pontos
+        int x1, x2, y1, y2;
+        
+        System.out.println("""
+                Questão de Número 7) Calculo da distancia de dois pontos no plano cartesiano
+                De os valores de entrada do primeiro ponto P(x1, y1)
+                x1:
+                        """);
+        
+        // Recebendo primeira variavel do ponto 1
+        x1 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("x2: ");
+
+        // Recebendo segunda variavel do ponto 1
+        x2 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Agora as variaveis do Segundo Ponto, y1:");
+
+        // Recebendo Primeira variável do Segundo Ponto
+        y1 = scanner.nextInt();
+        scanner.nextLine();
+
+        // Recebendo Segunda variável do Segundo Ponto
+        y2 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.printf("""
+            Esses sao os pontos dados:
+            Primeiro ponto, x1: %d, x2: %d
+            Segundo Ponto, y1: %d, y2: %d
+            Distancia entre eles no plano: %.2f
+                """, x1, x2, y1, y2, Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2)));
+
+                
+        //8) Programa que recebe um número e retorna o antecessore o sucessor
+        System.out.print("""
+                Questao de número 8) Recebe um número inteiro e calcula antecessor e sucessor
+                Digite um número qualquer(inteiro): """);
+
+        int num = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.printf("""
+                Valor digitado: %d
+                Antecessor: %d
+                Sucessor: %d""", num, Math.decrementExact(num), Math.incrementExact(num));
+                
+
+        // 9) Programa que le a porcentagem de IPI(Imposto Sobre Produtos Industrializados) e retorna valores
+        System.out.println("""
+                Questão de número 9) Recebe IPI e retorna o valor total de um Produto
+                Digite  a porcentagem do IPI a ser acrescido nas peças: """);
+        
+        int codigo1, quantidade1, codigo2, quantidade2;
+        float valorUni1, valorUni2;
+
+        // Variavel que recebe a porcentagem de IPI        
+        float porcentagemIPI = scanner.nextFloat();
+        scanner.nextLine();
+
+        // PEÇA 1
+        System.out.println("Codigo da peça 1:");
+        codigo1 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Quantidade de peças número 1:");
+        quantidade1 = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.println("Valor Unitário da peça 1: ");
+        valorUni1 = scanner.nextFloat();
+        scanner.nextLine();
+
+        // PEÇA 2
+        System.out.println("Codigo da peça 2:");
+        codigo2 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Quantidade de peças número 2:");
+        quantidade2 = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.println("Valor Unitário da peça 2: ");
+        valorUni2 = scanner.nextFloat();
+        scanner.nextLine();
+
+        // RETORNANDO O VALOR TOTAL
+        System.out.printf("""
+                Valor Total a ser pago: 
+                %f """, (valorUni1 * quantidade1 + valorUni2 * quantidade2) / (porcentagemIPI/100 + 1));
+
+                
+                
+        scanner.close();
     }
 }
